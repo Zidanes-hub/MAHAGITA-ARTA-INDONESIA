@@ -3,7 +3,6 @@ const siteImages = {
   logo: 'images/image/logo mahagita.png',
   hero: {
     bg: 'images/image/gambar1.png', 
-    pdf: 'documents/legality/company_profile.pdf',
   },
   about: [
     'images/image/BIMTEK.jpeg',

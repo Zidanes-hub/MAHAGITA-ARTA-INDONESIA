@@ -78,4 +78,47 @@ document.addEventListener('DOMContentLoaded', () => {
             console.warn('Document key not found:', key);
         }
     });
+
+    // --- Contact Form Handling (Connect to Database) ---
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Biar gak refresh halaman
+            
+            // Ambil data dari input
+            const name = document.getElementById('inputName').value;
+            const email = document.getElementById('inputEmail').value;
+            const message = document.getElementById('inputMessage').value;
+            
+            const submitBtn = contactForm.querySelector('button');
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = 'Sending...';
+            
+            try {
+                // Tembak API Backend kita
+                const response = await fetch('http://localhost:3000/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, email, message })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    alert('Terima kasih! Pesan Anda sudah tersimpan di Database.');
+                    contactForm.reset(); // Kosongin form
+                } else {
+                    alert('Gagal mengirim pesan.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Server error! Pastikan backend nyala.');
+            } finally {
+                submitBtn.innerText = originalText;
+            }
+        });
+    }
 });
