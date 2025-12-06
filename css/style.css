@@ -1,0 +1,37 @@
+body { font-family: 'Inter', sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Georgia', serif; }
+.text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+
+/* Animation Utility */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translate3d(0, 40px, 0); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+.animate-fade-in-up {
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+/* Packages (Paket A/B/C) adjustments */
+#packages .packages-row { width: 100%; }
+#packages .packages-row .lg\:w-1\/4 { flex: 0 0 25%; }
+#packages .packages-row .lg\:w-3\/4 { flex: 1 0 75%; }
+#packages .package-card { min-width: 260px; max-width: 420px; margin: 0 auto; background: rgba(6,23,19,0.86); border-radius: 12px; box-shadow: 0 12px 30px rgba(0,0,0,0.45); overflow: hidden; }
+#packages .package-card .package-label {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+#packages .package-card .package-content { padding: 1.25rem; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; }
+#packages .package-card h3 { color: #d4af37; }
+#packages .package-card p, #packages .package-card ul { color: #d1d5db; }
+
+@media (min-width: 768px) {
+    #packages .packages-row { align-items: flex-start; }
+    #packages .packages-row .lg\:w-3\/4 .grid { display:flex; gap:1rem; }
+    #packages .packages-row .lg\:w-3\/4 .grid > .package-card { flex: 1 1 0; }
+}
+
+@media (max-width: 767px) {
+    #packages .package-card { max-width: 100%; }
+}

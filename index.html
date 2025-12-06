@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mahagita Artha Indonesia</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0f2820', // Dark Green
+              accent: '#d4af37', // Gold/Yellow
+              'accent-light': '#fcd34d',
+              cream: '#fffdf5',
+            },
+            fontFamily: {
+              serif: ['Georgia', 'serif'],
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans antialiased text-gray-900 bg-gray-50">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <!-- Logo Area -->
+            <div class="flex items-center">
+                <a href="#" class="flex items-center gap-3">
+                    <img data-img-src="logo" alt="MAI Logo" class="h-12 w-auto object-contain drop-shadow-md" />
+                    <span id="nav-title" class="text-accent font-serif font-bold text-sm md:text-lg tracking-wider opacity-90 hidden sm:block">
+                        MAHAGITA ARTHA INDONESIA
+                    </span>
+                </a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#portfolio" class="text-accent hover:text-white transition-colors font-medium text-sm uppercase tracking-widest">Portfolio</a>
+                <a href="#service" class="text-accent hover:text-white transition-colors font-medium text-sm uppercase tracking-widest">Service</a>
+                <a href="#contact" class="text-accent hover:text-white transition-colors font-medium text-sm uppercase tracking-widest">Contacts us</a>
+                <button class="flex items-center gap-2 text-accent font-medium hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                    Log in
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-accent p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-primary absolute w-full left-0 top-full shadow-xl border-t border-accent/20">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#portfolio" class="block text-accent hover:text-white py-2 font-medium uppercase">Portfolio</a>
+                <a href="#service" class="block text-accent hover:text-white py-2 font-medium uppercase">Service</a>
+                <a href="#contact" class="block text-accent hover:text-white py-2 font-medium uppercase">Contacts us</a>
+                <a href="#" class="block text-accent hover:text-white py-2 font-medium uppercase border-t border-white/10 mt-2">Log in</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen w-full overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 hover:scale-105" data-img-bg="hero.bg">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-primary"></div>
+        </div>
+
+        <div class="relative h-full flex flex-col items-center justify-center text-center px-4 pt-20">
+            <h1 class="text-accent text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-4 text-shadow animate-fade-in-up">
+                MAHAGITA ARTHA INDONESIA
+            </h1>
+            <p class="text-white text-xl md:text-3xl font-light tracking-widest mb-12 text-shadow">
+                Event Organizer & Travel
+            </p>
+            <a href="documents/legality/company_profile.pdf" target="_blank" class="px-8 py-3 bg-primary/80 border border-accent text-accent hover:bg-accent hover:text-primary transition-all duration-300 uppercase tracking-widest font-semibold text-sm backdrop-blur-sm">
+                Read More
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section id="about" class="bg-primary py-16 md:py-24 px-4 overflow-hidden">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Side - Image Grid -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <img data-img-src="about.0" alt="Training" class="rounded-lg shadow-lg w-full h-48 object-cover hover:scale-105 transition-transform duration-500" />
+                        <img data-img-src="about.1" alt="Team" class="rounded-lg shadow-lg w-full h-64 object-cover mt-8 hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <img data-img-src="about.2" alt="Meeting" class="rounded-lg shadow-lg w-full h-64 object-cover hover:scale-105 transition-transform duration-500" />
+                        <img data-img-src="about.3" alt="Consulting" class="rounded-lg shadow-lg w-full h-48 object-cover hover:scale-105 transition-transform duration-500" />
+                    </div>
+                </div>
+
+                <!-- Right Side - Text -->
+                <div class="text-left text-white space-y-6">
+                    <h2 class="text-5xl md:text-7xl font-serif text-accent opacity-90 italic">
+                        ABOUT US
+                    </h2>
+                    <div class="w-20 h-1 bg-accent mb-6"></div>
+                    <p class="text-base md:text-lg leading-relaxed text-gray-200 text-justify">
+                        PT Mahagita Artha Indonesia adalah perusahaan terdepan di bidang jasa pelatihan SDM yang dirancang secara profesional, dengan standar kualitas kelembagaan, sumber daya manusia, dan produk layanan yang unggul. Kami mengutamakan mutu tinggi dan kepuasan pelanggan sebagai pondasi utama, sambil merangkul berbagai sektor strategis seperti Pelatihan/Bimbingan Teknis (Bimtek) Manajemen dan Teknis, Konsultasi Sumber Daya Air (SDA), Lingkungan Hidup, Akreditasi Laboratorium, Event Organizer (EO), peningkatan produktivitas tenaga kerja, serta dukungan pembangunan berkelanjutan.
+                    </p>
+                    <p class="text-accent font-serif italic text-lg pt-4">
+                        PT Mahagita Artha Indonesia
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision Mission Section -->
+        <section class="relative py-24 bg-fixed bg-cover bg-center" data-img-bg="visionMission.bg">
+            <div class="absolute inset-0 bg-primary/80"></div>
+            
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-8 text-center">
+                    
+                    <!-- Visi -->
+                    <div class="flex flex-col items-center group">
+                        <h2 class="text-5xl font-serif text-accent mb-6 italic transform group-hover:-translate-y-2 transition-transform">
+                            VISI
+                        </h2>
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-primary border-4 border-accent flex items-center justify-center p-8 shadow-2xl relative overflow-hidden">
+                            <div class="absolute inset-0 opacity-20 bg-cover bg-center" data-img-bg="visionMission.vision"></div>
+                            <p class="relative text-white text-lg md:text-xl font-medium leading-relaxed">
+                                Menjadi Lembaga Pelatihan yang Berkompeten, Maju dan Profesional.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Misi -->
+                    <div class="flex flex-col items-center group">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-primary border-4 border-accent flex items-center justify-center p-8 shadow-2xl relative overflow-hidden order-2 md:order-1 mt-6 md:mt-0">
+                            <div class="absolute inset-0 opacity-20 bg-cover bg-center" data-img-bg="visionMission.mission"></div>
+                            <p class="relative text-white text-lg md:text-xl font-medium leading-relaxed">
+                                Memberikan pelatihan berkualitas tinggi untuk meningkatkan kompetensi tenaga kerja Indonesia, memastikan kesiapan menghadapi tantangan dunia kerja.
+                            </p>
+                        </div>
+                        <h2 class="text-5xl font-serif text-accent mt-6 md:mb-6 md:mt-0 italic order-1 md:order-2 transform group-hover:-translate-y-2 transition-transform">
+                            MISI
+                        </h2>
+                    </div>
+
+                </div>
+                
+                <div class="absolute bottom-4 left-4 text-accent/50 italic text-sm">
+                    PT Mahagita Artha Indonesia
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="service" class="relative py-20 bg-primary overflow-hidden">
+            <div class="absolute inset-0 opacity-10" data-img-bg="services.bgPattern"></div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-6xl font-serif text-accent inline-block border-b-2 border-accent pb-2 italic">
+                        SERVICE
+                    </h2>
+                    <div class="mt-4 flex justify-center">
+                        <svg class="w-16 h-8 text-accent" viewBox="0 0 100 50">
+                            <path d="M0 25 Q 25 0, 50 25 T 100 25" fill="none" stroke="currentColor" stroke-width="2" />
+                            <path d="M0 35 Q 25 10, 50 35 T 100 35" fill="none" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="services-grid">
+                    
+                    <!-- 1. Event Organizer -->
+                    <div class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer bg-black">
+                        <div class="aspect-w-16 aspect-h-10 h-80">
+                            <img data-img-src="services.eo" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100" alt="Event Organizer">
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent p-4">
+                            <h3 class="text-accent font-bold uppercase text-lg tracking-widest border-l-4 border-accent pl-3">Event Organizer</h3>
+                        </div>
+                    </div>
+
+                    <!-- 2. Travel Management -->
+                    <div class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer bg-black">
+                        <div class="aspect-w-16 aspect-h-10 h-80">
+                            <img data-img-src="services.travel" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100" alt="Travel Management">
+                        </div>
+                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent p-4">
+                            <h3 class="text-accent font-bold uppercase text-lg tracking-widest border-l-4 border-accent pl-3">Travel Management</h3>
+                        </div>
+                    </div>
+
+                    <!-- 3. Konsultasi SDA -->
+                    <div class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer bg-black">
+                        <div class="aspect-w-16 aspect-h-10 h-80">
+                            <img data-img-src="services.sda" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100" alt="Konsultasi SDA">
+                        </div>
+                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent p-4">
+                            <h3 class="text-accent font-bold uppercase text-lg tracking-widest border-l-4 border-accent pl-3">Konsultasi SDA</h3>
+                        </div>
+                    </div>
+
+                    <!-- 4. Sertifikasi -->
+                    <div class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer bg-black">
+                        <div class="aspect-w-16 aspect-h-10 h-80">
+                            <img data-img-src="services.sertifikasi" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100" alt="Sertifikasi">
+                        </div>
+                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent p-4">
+                            <h3 class="text-accent font-bold uppercase text-lg tracking-widest border-l-4 border-accent pl-3">Sertifikasi</h3>
+                        </div>
+                    </div>
+
+                    <!-- 5. Public Training -->
+                    <div class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer">
+                        <div class="aspect-w-16 aspect-h-10 h-64">
+                            <img data-img-src="services.training" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" alt="Public Training">
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="absolute top-4 left-1/2 transform -translate-x-1/2 bg-primary/90 px-6 py-2 border border-accent">
+                            <h3 class="text-white font-bold text-center uppercase text-sm tracking-wider whitespace-nowrap">Public Training</h3>
+                        </div>
+                    </div>
+
+                    <!-- 6. In House Training -->
+                    <div class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer">
+                        <div class="aspect-w-16 aspect-h-10 h-64">
+                            <img data-img-src="services.inhouse" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" alt="In House Training">
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="absolute top-4 left-1/2 transform -translate-x-1/2 bg-primary/90 px-6 py-2 border border-accent">
+                            <h3 class="text-white font-bold text-center uppercase text-sm tracking-wider whitespace-nowrap">In House Training</h3>
+                        </div>
+                    </div>
+
+                    <!-- 7. Laboratorium & Lingkungan -->
+                    <div class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer">
+                        <div class="aspect-w-16 aspect-h-10 h-64">
+                            <img data-img-src="services.lab" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" alt="Laboratorium & Lingkungan">
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="absolute top-4 left-1/2 transform -translate-x-1/2 bg-primary/90 px-6 py-2 border border-accent">
+                            <h3 class="text-white font-bold text-center uppercase text-sm tracking-wider whitespace-nowrap">Laboratorium</h3>
+                        </div>
+                    </div>
+
+                    <!-- 8. Konsultasi Teknis -->
+                    <div class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer">
+                        <div class="aspect-w-16 aspect-h-10 h-64">
+                            <img data-img-src="services.consulting" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" alt="Konsultasi Teknis">
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="absolute top-4 left-1/2 transform -translate-x-1/2 bg-primary/90 px-6 py-2 border border-accent">
+                            <h3 class="text-white font-bold text-center uppercase text-sm tracking-wider whitespace-nowrap">Konsultasi Teknis</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Packages -->
+        <section id="packages" class="relative py-20 min-h-screen flex items-center">
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat fixed" data-img-bg="packages.bg">
+                <div class="absolute inset-0 bg-primary/40 backdrop-blur-[2px]"></div>
+            </div>
+
+            <div class="relative z-10 w-full max-w-7xl mx-auto px-4">
+                <h2 class="text-5xl md:text-7xl font-serif text-accent/90 text-center mb-16 uppercase tracking-wider mix-blend-overlay">
+                    SERVICE LAYANAN
+                </h2>
+
+                <div class="flex flex-col lg:flex-row gap-8 packages-row">
+                    <!-- Sidebar List -->
+                    <div class="lg:w-1/4 text-white bg-primary/80 p-6 rounded-r-xl border-l-4 border-accent h-fit">
+                        <ul class="space-y-3 font-medium text-lg">
+                            <li class="flex items-center gap-2 hover:text-accent cursor-pointer transition-colors"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span>Public Training</li>
+                            <li class="flex items-center gap-2 hover:text-accent cursor-pointer transition-colors"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span>Seminar</li>
+                            <li class="flex items-center gap-2 hover:text-accent cursor-pointer transition-colors"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span>In House Training</li>
+                            <li class="flex items-center gap-2 hover:text-accent cursor-pointer transition-colors"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span>Training</li>
+                            <li class="flex items-center gap-2 hover:text-accent cursor-pointer transition-colors"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span>Konsultasi</li>
+                            <li class="flex items-center gap-2 hover:text-accent cursor-pointer transition-colors"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span>Paket Meeting</li>
+                            <li class="flex items-center gap-2 hover:text-accent cursor-pointer transition-colors"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span>Outbound</li>
+                            <li class="flex items-center gap-2 hover:text-accent cursor-pointer transition-colors"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span>Gathering</li>
+                        </ul>
+                    </div>
+
+                    <!-- Packages -->
+                    <div class="lg:w-3/4 grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- P1 -->
+                        <div class="flex flex-col package-card">
+                                <div class="bg-[#8ec74e] flex items-center justify-center py-2 package-label">
+                                    <span class="text-primary font-bold text-xl tracking-widest">PAKET A</span>
+                                </div>
+                                <div class="flex-1 bg-primary/90 text-white p-6 border border-accent/20 hover:bg-primary transition-colors package-content">
+                                    <h3 class="text-xl font-bold text-accent mb-4">TRAINING</h3>
+                                    <p class="text-sm text-gray-300 mb-4">Paket pelatihan komprehensif untuk peningkatan kompetensi staf.</p>
+                                    <ul class="text-sm space-y-2 mb-6 text-gray-400">
+                                        <li>• Materi Terupdate</li>
+                                        <li>• Sertifikat Resmi</li>
+                                        <li>• Konsumsi & Akomodasi</li>
+                                    </ul>
+                                    <button class="w-full py-2 border border-accent text-accent hover:bg-accent hover:text-primary transition-colors text-sm uppercase font-bold">Select</button>
+                                </div>
+                            </div>
+                         <!-- P2 -->
+                        <div class="flex flex-col package-card">
+                            <div class="bg-[#8ec74e] flex items-center justify-center py-2 package-label">
+                                <span class="text-primary font-bold text-xl tracking-widest">PAKET B</span>
+                            </div>
+                            <div class="flex-1 bg-primary/90 text-white p-6 border border-accent/20 hover:bg-primary transition-colors package-content">
+                                <h3 class="text-xl font-bold text-accent mb-4">GATHERING</h3>
+                                <p class="text-sm text-gray-300 mb-4">Paket kegiatan luar ruang untuk membangun kekompakan tim.</p>
+                                <ul class="text-sm space-y-2 mb-6 text-gray-400">
+                                    <li>• Lokasi Menarik</li>
+                                    <li>• Games & Outbound</li>
+                                    <li>• Dokumentasi</li>
+                                </ul>
+                                <button class="w-full py-2 border border-accent text-accent hover:bg-accent hover:text-primary transition-colors text-sm uppercase font-bold">Select</button>
+                            </div>
+                        </div>
+                         <!-- P3 -->
+                        <div class="flex flex-col package-card">
+                            <div class="bg-[#8ec74e] flex items-center justify-center py-2 package-label">
+                                <span class="text-primary font-bold text-xl tracking-widest">PAKET C</span>
+                            </div>
+                            <div class="flex-1 bg-primary/90 text-white p-6 border border-accent/20 hover:bg-primary transition-colors package-content">
+                                <h3 class="text-xl font-bold text-accent mb-4">KONSULTASI</h3>
+                                <p class="text-sm text-gray-300 mb-4">Layanan konsultasi ahli untuk kebutuhan teknis dan manajemen.</p>
+                                <ul class="text-sm space-y-2 mb-6 text-gray-400">
+                                    <li>• Tenaga Ahli Profesional</li>
+                                    <li>• Laporan Komprehensif</li>
+                                    <li>• Pendampingan</li>
+                                </ul>
+                                <button class="w-full py-2 border border-accent text-accent hover:bg-accent hover:text-primary transition-colors text-sm uppercase font-bold">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section id="portfolio" class="py-20 bg-gradient-to-b from-primary to-[#0a1f18]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-5xl font-serif text-accent uppercase tracking-widest">
+                        PORTOFOLIO
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    <!-- Items -->
+                    <div class="bg-white p-2 rounded shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="overflow-hidden bg-gray-200 h-48 relative">
+                            <img data-img-src="portfolio.0" alt="Project" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mt-3">
+                            <h4 class="font-bold text-primary text-lg">Dokumentasi Training</h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-wide">Public Training</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-2 rounded shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="overflow-hidden bg-gray-200 h-48 relative">
+                            <img data-img-src="portfolio.1" alt="Project" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mt-3">
+                            <h4 class="font-bold text-primary text-lg">Workshop Teknis</h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-wide">In House Training</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-2 rounded shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="overflow-hidden bg-gray-200 h-48 relative">
+                            <img data-img-src="portfolio.2" alt="Project" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mt-3">
+                            <h4 class="font-bold text-primary text-lg">Pendampingan Akreditasi</h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-wide">Konsultasi</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-2 rounded shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="overflow-hidden bg-gray-200 h-48 relative">
+                            <img data-img-src="portfolio.3" alt="Project" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mt-3">
+                            <h4 class="font-bold text-primary text-lg">Survei Lapangan</h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-wide">Konsultasi SDA</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-2 rounded shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="overflow-hidden bg-gray-200 h-48 relative">
+                            <img data-img-src="portfolio.4" alt="Project" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mt-3">
+                            <h4 class="font-bold text-primary text-lg">Sampling Lingkungan</h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-wide">Laboratorium</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-2 rounded shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="overflow-hidden bg-gray-200 h-48 relative">
+                            <img data-img-src="portfolio.5" alt="Project" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mt-3">
+                            <h4 class="font-bold text-primary text-lg">Pelatihan Kreatif</h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-wide">Workshop</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legality -->
+        <section class="py-20 bg-primary relative overflow-hidden">
+            <div class="absolute inset-0 opacity-20" data-img-bg="legality.bgTexture"></div>
+            
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-6xl font-serif text-accent italic mb-16">
+                    LEGALITAS
+                </h2>
+
+                <div class="flex flex-col md:flex-row justify-center items-start gap-8 lg:gap-12">
+                    <!-- Doc 1 -->
+                    <a data-doc-href="legality.items.0.pdf" target="_blank" class="block flex-1 w-full max-w-sm mx-auto bg-white p-2 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                        <div class="aspect-[3/4] overflow-hidden bg-gray-100 border border-gray-300 relative">
+                             <img data-img-src="legality.items.0.thumbnail" alt="SK Kemenkumham" class="w-full h-full object-cover opacity-90">
+                             <div class="absolute inset-0 flex items-center justify-center bg-black/10">
+                                 <span class="bg-primary/80 text-white text-xs px-2 py-1 rounded">SK Kemenkumham</span>
+                             </div>
+                        </div>
+                        <div class="mt-4 text-left">
+                            <h4 class="font-bold text-primary text-sm uppercase">SK Kemenkumham</h4>
+                            <p class="text-xs text-gray-600 mt-1">AHU-033816.AH.01.30.Tahun 2023</p>
+                        </div>
+                    </a>
+                    <!-- Doc 2 -->
+                    <a data-doc-href="legality.items.1.pdf" target="_blank" class="block flex-1 w-full max-w-sm mx-auto bg-white p-2 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                        <div class="aspect-[3/4] overflow-hidden bg-gray-100 border border-gray-300 relative">
+                             <img data-img-src="legality.items.1.thumbnail" alt="NPWP" class="w-full h-full object-cover opacity-90">
+                             <div class="absolute inset-0 flex items-center justify-center bg-black/10">
+                                 <span class="bg-primary/80 text-white text-xs px-2 py-1 rounded">NPWP</span>
+                             </div>
+                        </div>
+                        <div class="mt-4 text-left">
+                            <h4 class="font-bold text-primary text-sm uppercase">NPWP</h4>
+                            <p class="text-xs text-gray-600 mt-1">40.969.829.7-652.000</p>
+                        </div>
+                    </a>
+                    <!-- Doc 3 -->
+                    <a data-doc-href="legality.items.2.pdf" target="_blank" class="block flex-1 w-full max-w-sm mx-auto bg-white p-2 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                        <div class="aspect-[3/4] overflow-hidden bg-gray-100 border border-gray-300 relative">
+                             <img data-img-src="legality.items.2.thumbnail" alt="NIB" class="w-full h-full object-cover opacity-90">
+                             <div class="absolute inset-0 flex items-center justify-center bg-black/10">
+                                 <span class="bg-primary/80 text-white text-xs px-2 py-1 rounded">NIB</span>
+                             </div>
+                        </div>
+                        <div class="mt-4 text-left">
+                            <h4 class="font-bold text-primary text-sm uppercase">NIB</h4>
+                            <p class="text-xs text-gray-600 mt-1">Nomor Induk Berusaha: 1905230105333</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <p class="mt-12 text-gray-400 italic font-serif">
+                    [Dokumen resmi terdaftar di Kementerian Hukum dan HAM Republik Indonesia]
+                </p>
+            </div>
+        </section>
+
+        <!-- Partners -->
+        <section class="relative py-20 bg-primary">
+            <div class="absolute inset-0 bg-cover bg-center opacity-30" data-img-bg="partners.bg"></div>
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/10 to-transparent"></div>
+            
+            <div class="relative z-10 max-w-7xl mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                    <div class="text-accent mb-6 md:mb-0">
+                        <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-2 mx-auto md:mx-0 p-2">
+                            <img data-img-src="logo" class="w-full h-full object-contain" />
+                        </div>
+                        <p class="font-serif tracking-widest text-sm">MAHAGITA ARTHA INDONESIA</p>
+                    </div>
+                    
+                    <div class="text-right">
+                        <h2 class="text-6xl font-serif text-white bg-white/20 px-4 inline-block backdrop-blur-sm">
+                            OUR
+                        </h2>
+                        <br />
+                        <h2 class="text-6xl font-serif text-primary bg-white px-4 inline-block mt-2 italic">
+                            PARTNER
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="bg-white/90 backdrop-blur-md p-6 rounded-xl shadow-2xl">
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <div class="aspect-square bg-gray-200 rounded flex items-center justify-center grayscale hover:grayscale-0 transition-all cursor-pointer"><img data-img-src="partners.partnerLogoBase" data-suffix="51" class="w-20 h-20 object-contain mix-blend-multiply"></div>
+                        <div class="aspect-square bg-gray-200 rounded flex items-center justify-center grayscale hover:grayscale-0 transition-all cursor-pointer"><img data-img-src="partners.partnerLogoBase" data-suffix="52" class="w-20 h-20 object-contain mix-blend-multiply"></div>
+                        <div class="aspect-square bg-gray-200 rounded flex items-center justify-center grayscale hover:grayscale-0 transition-all cursor-pointer"><img data-img-src="partners.partnerLogoBase" data-suffix="53" class="w-20 h-20 object-contain mix-blend-multiply"></div>
+                        <div class="aspect-square bg-gray-200 rounded flex items-center justify-center grayscale hover:grayscale-0 transition-all cursor-pointer"><img data-img-src="partners.partnerLogoBase" data-suffix="54" class="w-20 h-20 object-contain mix-blend-multiply"></div>
+                        <div class="aspect-square bg-gray-200 rounded flex items-center justify-center grayscale hover:grayscale-0 transition-all cursor-pointer"><img data-img-src="partners.partnerLogoBase" data-suffix="55" class="w-20 h-20 object-contain mix-blend-multiply"></div>
+                        <div class="aspect-square bg-gray-200 rounded flex items-center justify-center grayscale hover:grayscale-0 transition-all cursor-pointer"><img data-img-src="partners.partnerLogoBase" data-suffix="56" class="w-20 h-20 object-contain mix-blend-multiply"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="relative py-20 bg-cream overflow-hidden">
+            <div class="max-w-6xl mx-auto px-4 relative z-10">
+                
+                <div class="text-center mb-8 relative">
+                    <h2 class="text-6xl md:text-8xl font-serif text-primary font-bold transform -rotate-2 inline-block">
+                        CONTACT <span class="text-5xl md:text-7xl ml-4">US</span>
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <!-- Left Visuals -->
+                    <div class="relative h-96 md:h-[500px]">
+                        <div class="absolute top-10 left-10 z-20 transform rotate-12">
+                            <img data-img-src="contact.phoneIcon" alt="Phone" class="w-48 opacity-80 filter brightness-50 sepia hue-rotate-50" />
+                        </div>
+                    </div>
+
+                    <!-- Right Form -->
+                    <div class="space-y-8">
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-3 text-primary/80 font-bold text-lg md:text-xl">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.1 16.5c-.7-.7-2.2-1.4-2.9-1.6-.8-.2-1.5-.1-2 .6-.6.8-1 1.7-1.3 1.6-.6-.1-3.2-1.5-5.2-3.5-1.7-1.7-2.8-3.9-2.8-4.4 0-.4.8-.9 1.4-1.6.4-.5.5-1-.1-2.2-.6-1.2-1.6-2.7-2.3-3-.7-.3-1.6-.2-2.1.3C2.3 3.3 1 4.9 1 7c0 4.1 3.5 10 9.8 13.9 4.3 2.7 6.9 2.9 8 2.5.8-.3 2.8-1.5 3.3-3s.4-2.7.1-3.1c-.2-.4-1.2-.9-2.1-1.8z"/></svg>
+                                <span>+62 82264195559 NAME</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-primary/80 font-bold text-lg md:text-xl">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.5.5.2.9.5 1.3.9.4.4.7.8.9 1.3.2.4.4 1 .5 2.2.1 1.3.1 1.7.1 4.8s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.5 2.2-.2.5-.5.9-.9 1.3-.4.4-.8.7-1.3.9-.4.2-1 .4-2.2.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.5-.5-.2-.9-.5-1.3-.9-.4-.4-.7-.8-.9-1.3-.2-.4-.4-1-.5-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.5-2.2.2-.5.5-.9.9-1.3.4-.4.8-.7 1.3-.9.4-.2 1-.4 2.2-.5 1.3-.1 1.7-.1 4.9-.1m0-2.2C8.7 0 8.3 0 7.1.1 5.8.1 4.9.3 4.1.6c-.8.3-1.5.8-2.1 1.4C1.4 2.6.9 3.3.6 4.1.3 4.9.1 5.8.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.1 1.3.3 2.1.6 2.9.3.8.8 1.5 1.4 2.1.6.6 1.3 1.1 2.1 1.4.8.3 1.7.5 2.9.6 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c1.3-.1 2.1-.3 2.9-.6.8-.3 1.5-.8 2.1-1.4.6-.6 1.1-1.3 1.4-2.1.3-.8.5-1.7.6-2.9.1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.1-1.3-.3-2.1-.6-2.9-.3-.8-.8-1.5-1.4-2.1-.6-.6-1.3-1.1-2.1-1.4-.8-.3-1.7-.5-2.9-.6C15.7 0 15.3 0 12 0z"/></svg>
+                                <span>@mahagitaarthaindonesia</span>
+                            </div>
+                        </div>
+
+                        <form class="space-y-4">
+                            <div class="relative">
+                                <label class="absolute -top-2 left-3 bg-cream px-1 text-primary font-bold text-sm">name :</label>
+                                <input type="text" class="w-full border-2 border-primary/50 bg-transparent rounded-full px-4 py-3 outline-none focus:border-primary" />
+                            </div>
+                            <div class="relative">
+                                <label class="absolute -top-2 left-3 bg-cream px-1 text-primary font-bold text-sm">email :</label>
+                                <input type="email" class="w-full border-2 border-primary/50 bg-transparent rounded-full px-4 py-3 outline-none focus:border-primary" />
+                            </div>
+                            <div class="relative">
+                                <label class="absolute -top-2 left-3 bg-cream px-1 text-primary font-bold text-sm">message :</label>
+                                <textarea rows="4" class="w-full border-2 border-primary/50 bg-transparent rounded-2xl px-4 py-3 outline-none focus:border-primary resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="bg-primary text-accent px-8 py-2 rounded-full font-bold hover:bg-primary/90 transition">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary pt-16 pb-8 border-t border-accent/20 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+                <!-- Left Info -->
+                <div class="lg:col-span-2 space-y-8">
+                    <div>
+                        <h2 class="text-3xl font-serif text-accent mb-2">MAHAGITA ARTHA INDONESIA</h2>
+                        <p class="text-lg italic text-gray-400">Event Organizer & Travel</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            <span class="text-lg">08XXXXXXXXXX - NAME</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                             <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            <span className="text-lg">08XXXXXXXXXX - NAME</span>
+                        </div>
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-8 pt-8 border-t border-white/10">
+                    <div>
+                        <h3 class="text-accent font-bold mb-4 uppercase tracking-widest">Perusahaan</h3>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li><a href="#" class="hover:text-white">Tentang Kami</a></li>
+                            <li><a href="#" class="hover:text-white">Layanan Kami</a></li>
+                            <li><a href="#" class="hover:text-white">Portofolio</a></li>
+                            <li><a href="#" class="hover:text-white">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-accent font-bold mb-4 uppercase tracking-widest">Layanan</h3>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li><a href="#" class="hover:text-white">Training</a></li>
+                            <li><a href="#" class="hover:text-white">Consulting</a></li>
+                            <li><a href="#" class="hover:text-white">Event Organizing</a></li>
+                            <li><a href="#" class="hover:text-white">Travel</a></li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-1">
+                        <h3 class="text-accent font-bold mb-4 uppercase tracking-widest">Metode Pembayaran</h3>
+                        <div class="flex gap-2">
+                            <div class="w-10 h-8 bg-white rounded flex items-center justify-center"><div class="w-6 h-4 bg-gray-300"></div></div>
+                            <div class="w-10 h-8 bg-white rounded flex items-center justify-center"><div class="w-6 h-4 bg-gray-300"></div></div>
+                            <div class="w-10 h-8 bg-white rounded flex items-center justify-center"><div class="w-6 h-4 bg-gray-300"></div></div>
+                            <div class="w-10 h-8 bg-white rounded flex items-center justify-center"><div class="w-6 h-4 bg-gray-300"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Phone Image -->
+            <div class="relative hidden lg:block">
+                 <div class="absolute top-0 right-0 w-64 h-[500px] bg-gray-800 rounded-[3rem] border-8 border-gray-900 shadow-2xl overflow-hidden transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                    <div class="absolute top-0 w-full h-8 bg-black z-20 rounded-t-[2.5rem] flex justify-center items-center">
+                        <div class="w-20 h-4 bg-gray-900 rounded-b-xl"></div>
+                    </div>
+                    <img data-img-src="footer.phoneScreen" class="w-full h-full object-cover" alt="Screen" />
+                    <div class="absolute bottom-20 inset-x-0 text-center">
+                        <div class="bg-white/80 w-20 h-20 mx-auto rounded-full flex items-center justify-center shadow-lg animate-bounce">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                            </svg>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+        <!-- Bottom Socials & Copyright -->
+        <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10">
+            <div class="flex space-x-6 mb-4 md:mb-0">
+                <a href="#" class="text-white hover:text-accent"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.56v14.9c0 2.5-2.04 4.54-4.55 4.54H4.56C2.05 24 0 21.96 0 19.46V4.56C0 2.05 2.04.01 4.55.01h14.9c2.5 0 4.54 2.04 4.54 4.55zM12 5.56c-3.55 0-6.44 2.89-6.44 6.44s2.89 6.44 6.44 6.44 6.44-2.89 6.44-6.44-2.89-6.44-6.44-6.44zm0 10.4c-2.18 0-3.96-1.78-3.96-3.96S9.82 8.04 12 8.04s3.96 1.78 3.96 3.96-1.78 3.96-3.96 3.96zm8.16-9.66c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg></a>
+                <a href="#" class="text-white hover:text-accent"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.6 0H4.4C2 0 0 2 0 4.4v15.2C0 22 2 24 4.4 24h15.2c2.4 0 4.4-2 4.4-4.4V4.4C24 2 22 0 19.6 0zM7.7 18c0 .6-.4 1-1 1s-1-.4-1-1v-8c0-.6.4-1 1-1s1 .4 1 1v8zm0-11.1c0 .6-.4 1-1 1-.5 0-1-.4-1-1V5.2c0-.6.4-1 1-1 .5 0 1 .4 1 1v1.7zm11.4 11.1c0 .6-.4 1-1 1s-1-.4-1-1v-4.3c0-1.2-.8-1.7-1.7-1.7-.5 0-1 .2-1.4.6v5.4c0 .6-.4 1-1 1s-1-.4-1-1v-8c0-.6.4-1 1-1s1 .4 1 1v.7c.6-.6 1.3-.9 2.2-.9 2 0 2.9 1.4 2.9 3.2v4.3z"/></svg></a>
+                <a href="#" class="text-white hover:text-accent"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2c-.3 1.1-1.1 2-2.2 2.2C19.4 9 12 9 12 9s-7.4 0-9.3-.5c-1.1-.3-1.9-1.1-2.2-2.2C0 4.3 0 0 0 0s0-4.3.5-6.2c.3-1.1 1.1-2 2.2-2.2C4.6-9 12-9 12-9s7.4 0 9.3.5c1.1.3 1.9 1.1 2.2 2.2.5 1.9.5 6.2.5 6.2s0 4.3-.5 6.2zM9.5-3v6l5.2-3-5.2-3z"/></svg></a>
+            </div>
+            <div class="flex items-center gap-2 text-white/80">
+                <a href="#" class="bg-white text-primary px-4 py-1 rounded-full text-sm font-bold flex items-center gap-2 hover:bg-accent transition-colors">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-0.196 0.165-0.695 0.366-0.695 0.366s-0.505 0.165-1.077 0.165c-1.21 0-1.782-0.569-1.782-0.569s-0.233-0.233-0.57-0.233c-0.404 0-0.91 0.269-0.91 0.269l-3.333 1.953s-0.269 0.169-0.269 0.471c0 0.169 0.101 0.404 0.101 0.404l1.347 3.234s0.067 0.202 0.337 0.202c0.235 0 0.437-0.101 0.437-0.101l1.785-0.977s0.135-0.067 0.269-0.067c0.371 0 0.64 0.236 0.64 0.236s0.808 0.606 0.808 1.482c0 0.438-0.202 0.741-0.202 0.741s-0.269 0.337-0.707 0.337c-0.674 0-1.751-0.91-1.751-0.91l-1.549-1.448s-0.236-0.236-0.539-0.236c-0.236 0-0.472 0.135-0.472 0.135L6.63 15.066s-0.101 0.067-0.101 0.202c0 0.169 0.135 0.303 0.135 0.303l3.065 2.156s0.269 0.202 0.64 0.202c0.505 0 1.044-0.371 1.044-0.371l2.829-2.021s0.303-0.236 0.707-0.236c0.674 0 1.549 0.674 1.549 0.674s0.674 0.674 0.674 1.583c0 0.539-0.236 1.01-0.236 1.01s-0.337 0.707-1.112 0.707c-1.145 0-2.392-1.179-2.392-1.179L9.56 14.224s-0.303-0.337-0.775-0.337c-0.674 0-1.482 0.775-1.482 0.775l-1.987 2.122s-0.236 0.269-0.236 0.572c0 0.404 0.269 0.741 0.269 0.741s2.694 4.076 7.915 4.076c5.221 0 7.915-4.076 7.915-4.076s0.269-0.337 0.269-0.741c0-0.303-0.236-0.572-0.236-0.572l-1.987-2.122s-0.808-0.775-1.482-0.775c-0.472 0-0.775 0.337-0.775 0.337l-3.334 3.874s-1.246 1.179-2.392 1.179c-0.775 0-1.112-0.707-1.112-0.707s-0.236-0.471-0.236-1.01c0-0.909 0.674-1.583 0.674-1.583s0.875-0.674 1.549-0.674c0.404 0 0.707 0.236 0.707 0.236l2.829 2.021s0.539 0.371 1.044 0.371c0.371 0 0.64-0.202 0.64-0.202l3.065-2.156s0.135-0.135 0.135-0.303c0-0.135-0.101-0.202-0.101-0.202L17.562 8.161z"/></svg>
+                        contact us.
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sticky Whatsapp Button -->
+            <a href="https://wa.me/6282264195559" target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-2xl z-50 hover:bg-green-600 transition-colors animate-pulse">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/images.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
