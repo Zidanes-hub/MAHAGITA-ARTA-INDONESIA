@@ -2,13 +2,13 @@
 const siteImages = {
   logo: 'images/image/logo mahagita.png',
   hero: {
-    bg: 'images/image/gambar1.png', 
+    bg: 'images/image/gambar1.png',
   },
   about: [
     'images/image/BIMTEK.jpeg',
     'images/image/Akreditasi.jpeg',
     'images/image/PELATIHAN PENGENALAN ISO.jpeg',
-    'images/image/SAMPLING AIR.jpeg', 
+    'images/image/SAMPLING AIR.jpeg',
   ],
   visionMission: {
     bg: 'images/image/visi dan misi.png',
@@ -17,13 +17,13 @@ const siteImages = {
   },
   services: {
     bgPattern: 'https://www.transparenttextures.com/patterns/cubes.png',
-    eo: 'images/image/Event organizer.png',          
-    travel: 'images/image/TRAVEL MANAGEMENT.png',   
-    sda: 'images/image/Konsultasi sda.png',         
+    eo: 'images/image/Event organizer.png',
+    travel: 'images/image/TRAVEL MANAGEMENT.png',
+    sda: 'images/image/Konsultasi sda.png',
     sertifikasi: 'images/image/SERTIFIKASI.png',
     training: 'images/image/BIMTEK.jpeg',
     inhouse: 'images/image/PELATIHAN PENGENALAN ISO.jpeg',
-    lab: 'images/image/SAMPLING AIR.jpeg',      
+    lab: 'images/image/SAMPLING AIR.jpeg',
     consulting: 'images/image/DRONE.jpeg'
   },
   portfolio: [
@@ -65,3 +65,5 @@ const siteImages = {
     phoneScreen: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
   }
 };
+
+export default siteImages;
