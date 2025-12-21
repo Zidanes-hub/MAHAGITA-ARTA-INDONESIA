@@ -128,33 +128,105 @@ document.addEventListener('DOMContentLoaded', () => {
 // --- LOGIKA POP-UP HARGA ---
 
 // Data Paket (Bisa kamu edit harganya di sini)
+// Data Paket (Bisa kamu edit harganya di sini)
 const packageData = {
+    // SERVICE 1: Event Organizer
+    'eo': {
+        title: 'EVENT ORGANIZER',
+        desc: 'Jasa penyelenggara acara profesional untuk berbagai kebutuhan event Anda.',
+        prices: [
+            { item: 'Corporate Gathering', price: 'Mulai Rp 50.000.000' },
+            { item: 'Product Launching', price: 'Mulai Rp 75.000.000' },
+            { item: 'Wedding Organizer', price: 'Mulai Rp 45.000.000' },
+            { item: 'Birthday Party', price: 'Mulai Rp 15.000.000' }
+        ]
+    },
+    // SERVICE 2: Travel Management
+    'travel': {
+        title: 'TRAVEL MANAGEMENT',
+        desc: 'Layanan perjalanan bisnis dan wisata yang nyaman dan terencana.',
+        prices: [
+            { item: 'Tiket Pesawat Domestik/Intl', price: 'Harga Maskapai' },
+            { item: 'Reservasi Hotel', price: 'Corporate Rate' },
+            { item: 'Paket Tour Domestik (3D2N)', price: 'Mulai Rp 3.500.000/pax' },
+            { item: 'Sewa Bus Pariwisata', price: 'Mulai Rp 2.500.000/hari' }
+        ]
+    },
+    // SERVICE 3: Konsultasi SDA
+    'sda': {
+        title: 'KONSULTASI SDA',
+        desc: 'Solusi teknis dan perizinan terkait Sumber Daya Air.',
+        prices: [
+            { item: 'Studi Kelayakan (FS)', price: 'Call for Price' },
+            { item: 'Perizinan SIPA', price: 'Mulai Rp 15.000.000' },
+            { item: 'Kajian Hidrologi', price: 'Mulai Rp 25.000.000' }
+        ]
+    },
+    // SERVICE 4: Sertifikasi
+    'sertifikasi': {
+        title: 'SERTIFIKASI',
+        desc: 'Pendampingan sertifikasi profesi dan ISO perusahaan.',
+        prices: [
+            { item: 'Pelatihan & Uji Kompetensi BNSP', price: 'Mulai Rp 3.500.000/pax' },
+            { item: 'Pendampingan ISO 9001', price: 'Mulai Rp 45.000.000' },
+            { item: 'Pendampingan ISO 14001', price: 'Mulai Rp 45.000.000' }
+        ]
+    },
+    // SERVICE 5: Public Training
+    'training': {
+        title: 'PUBLIC TRAINING',
+        desc: 'Program pelatihan terbuka untuk umum dengan materi terkini.',
+        prices: [
+            { item: 'Online Training (Webinar)', price: 'Rp 500.000/pax' },
+            { item: 'Offline Training (2 Hari)', price: 'Rp 4.500.000/pax' },
+            { item: 'Sertifikasi BNSP', price: 'Bundling + Rp 2.500.000' }
+        ]
+    },
+    // SERVICE 6: In House Training
+    'inhouse': {
+        title: 'IN HOUSE TRAINING',
+        desc: 'Pelatihan eksklusif di lokasi perusahaan Anda.',
+        prices: [
+            { item: 'Paket Basic (Max 20 Pax)', price: 'Rp 25.000.000' },
+            { item: 'Paket Premium (Custom Materi)', price: 'Rp 35.000.000' },
+            { item: 'Lokasi Luar Kota', price: '+ Akomodasi Tim' }
+        ]
+    },
+    // SERVICE 7: Laboratorium
+    'lab': {
+        title: 'LABORATORIUM & LINGKUNGAN',
+        desc: 'Jasa pengambilan dan pengujian sampel lingkungan.',
+        prices: [
+            { item: 'Uji Kualitas Air Bersih', price: 'Mulai Rp 750.000/titik' },
+            { item: 'Uji Kualitas Udara Ambien', price: 'Mulai Rp 2.500.000/titik' },
+            { item: 'Sampling Tanah', price: 'Mulai Rp 1.500.000/sampel' }
+        ]
+    },
+    // SERVICE 8: Konsultasi Teknis
+    'consulting': {
+        title: 'KONSULTASI TEKNIS',
+        desc: 'Konsultasi engineering dan manajemen proyek.',
+        prices: [
+            { item: 'Konsultasi Per Jam', price: 'Rp 1.500.000' },
+            { item: 'Supervisi Proyek (Bulanan)', price: 'Nego' },
+            { item: 'Penyusunan DED', price: 'Call for Price' }
+        ]
+    },
+    // EXISTING PACKAGES (KEEPING FOR COMPATIBILITY)
     'A': {
         title: 'PAKET A - TRAINING',
         desc: 'Solusi lengkap untuk meningkatkan kompetensi tim Anda.',
-        prices: [
-            { item: 'Public Training (per pax)', price: 'Rp 4.500.000' },
-            { item: 'In-House Training (up to 20 pax)', price: 'Rp 25.000.000' },
-            { item: 'Sertifikasi BNSP', price: 'Hubungi Kami' }
-        ]
+        prices: [{ item: 'Public Training (per pax)', price: 'Rp 4.500.000' }, { item: 'In-House Training', price: 'Rp 25.000.000' }]
     },
     'B': {
         title: 'PAKET B - GATHERING',
         desc: 'Bangun kekompakan tim dengan kegiatan seru dan berkesan.',
-        prices: [
-            { item: 'One Day Trip (per pax)', price: 'Mulai Rp 350.000' },
-            { item: '2D1N Gathering (per pax)', price: 'Mulai Rp 850.000' },
-            { item: 'Outbound Facility', price: 'Included' }
-        ]
+        prices: [{ item: 'One Day Trip', price: 'Mulai Rp 350.000' }, { item: '2D1N Gathering', price: 'Mulai Rp 850.000' }]
     },
     'C': {
         title: 'PAKET C - KONSULTASI',
         desc: 'Pendampingan ahli untuk solusi teknis dan manajemen perusahaan.',
-        prices: [
-            { item: 'Konsultasi Per Jam', price: 'Rp 1.500.000' },
-            { item: 'Pendampingan Proyek (Bulan)', price: 'Nego' },
-            { item: 'Pembuatan Dokumen', price: 'Call for Price' }
-        ]
+        prices: [{ item: 'Konsultasi Per Jam', price: 'Rp 1.500.000' }, { item: 'Pendampingan Proyek', price: 'Nego' }]
     }
 };
 
@@ -195,7 +267,8 @@ window.openPricingModal = (type) => {
     // Animasi Masuk (sedikit delay biar transition jalan)
     setTimeout(() => {
         backdrop.classList.remove('opacity-0');
-        panel.classList.remove('opacity-0', 'scale-95');
+        // REMOVE state awal animasi (hidden state)
+        panel.classList.remove('opacity-0', 'scale-50', 'translate-y-12');
     }, 10);
 };
 
@@ -205,25 +278,116 @@ window.closePricingModal = () => {
     const backdrop = document.getElementById('modalBackdrop');
     const panel = document.getElementById('modalPanel');
 
-    // Animasi Keluar
+    // Animasi Keluar (ADD state hidden animation)
     backdrop.classList.add('opacity-0');
-    panel.classList.add('opacity-0', 'scale-95');
+    panel.classList.add('opacity-0', 'scale-50', 'translate-y-12');
 
     // Tunggu animasi selesai baru hide
     setTimeout(() => {
         modal.classList.add('hidden');
-    }, 300); // 300ms sesuai durasi transition default tailwind
+    }, 500); // 500ms sesuai durasi transition di HTML
 };
 
 // Fungsi Lanjut ke WhatsApp (dari dalam modal)
 const whatsappBtn = document.getElementById('btnWhatsapp');
 if (whatsappBtn) {
     whatsappBtn.addEventListener('click', () => {
-        const phoneNumber = "62881027445498";
+        const phoneNumber = "6282264195559"; // UPDATE NUMBER HERE
         const message = `Halo Admin, saya tertarik dengan *${currentPackage}* dan ingin diskusi harga lebih lanjut. Mohon infonya.`;
         const encodedMessage = encodeURIComponent(message);
         window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
 
-        closePricingModal(); // Tutup modal setelah klik
+        closePricingModal();
     });
 }
+
+// --- LOGIKA POP-UP PORTFOLIO ---
+
+const portfolioData = {
+    'training': {
+        title: 'Dokumentasi Training',
+        date: '20 Desember 2024',
+        desc: 'Berikut adalah dokumentasi kegiatan training yang telah kami laksanakan. Kami berkomitmen untuk memberikan pelatihan berkualitas tinggi dengan materi yang relevan dan instruktur yang berpengalaman. Peserta mendapatkan pengalaman belajar yang interaktif dan aplikatif.',
+        imagesKey: 'training' // Key di siteImages.portfolioDetails
+    },
+    'workshop': {
+        title: 'Workshop Teknis',
+        date: '15 November 2024',
+        desc: 'Dokumentasi kegiatan Workshop Teknis yang mendalam dan komprehensif. Kami menghadirkan praktisi ahli untuk berbagi wawasan teknis terkini, memastikan peserta tidak hanya memahami teori tetapi juga mampu menerapkannya di lapangan.',
+        imagesKey: 'workshop'
+    },
+    'akreditasi': {
+        title: 'Pendampingan Akreditasi',
+        date: '10 Oktober 2024',
+        desc: 'Proses pendampingan akreditasi laboratorium dan lembaga inspeksi. Mulai dari penyusunan dokumen, audit internal, hingga persiapan asesmen eksternal. Kami memastikan klien siap 100% menghadapi proses akreditasi.',
+        imagesKey: 'akreditasi'
+    },
+    'survei': {
+        title: 'Survei Lapangan',
+        date: '5 September 2024',
+        desc: 'Kegiatan survei lapangan untuk pengambilan data teknis sumber daya air dan lingkungan. Dilakukan oleh tim tenaga ahli yang kompeten dengan menggunakan peralatan survei modern untuk memastikan akurasi data.',
+        imagesKey: 'survei'
+    },
+    'sampling': {
+        title: 'Sampling Lingkungan',
+        date: '28 Agustus 2024',
+        desc: 'Proses pengambilan sampel lingkungan yang sesuai dengan standar SNI dan regulasi yang berlaku. Cakupan sampling meliputi air, udara, dan tanah untuk keperluan analisis laboratorium dan pemantauan lingkungan.',
+        imagesKey: 'sampling'
+    },
+    'kreatif': {
+        title: 'Pelatihan Kreatif',
+        date: '12 Juli 2024',
+        desc: 'Workshop interaktif yang dirancang untuk mengasah kreativitas dan inovasi tim. Menggabungkan metode belajar yang fun dengan materi yang berbobot, pelatihan ini cocok untuk fresh graduate hingga level manajerial.',
+        imagesKey: 'kreatif'
+    }
+};
+
+window.openPortfolioModal = (type) => {
+    const data = portfolioData[type];
+    if (!data) return;
+
+    // Populate Data
+    document.getElementById('portfolioTitle').innerText = data.title;
+    document.getElementById('portfolioDate').innerText = data.date;
+    document.getElementById('portfolioDesc').innerText = data.desc;
+
+    // Populate Images
+    const imgContainer = document.getElementById('portfolioImages');
+    imgContainer.innerHTML = ''; // Reset
+
+    const images = siteImages.portfolioDetails[data.imagesKey];
+    if (images) {
+        images.forEach(imgSrc => {
+            // Kita bisa bikin element img atau div bg
+            const div = document.createElement('div');
+            // Aspect ratio box
+            div.className = 'aspect-w-4 aspect-h-3 rounded-lg overflow-hidden shadow-md bg-gray-100 hover:scale-105 transition-transform duration-300';
+            div.innerHTML = `<img src="${imgSrc}" class="w-full h-full object-cover">`;
+            imgContainer.appendChild(div);
+        });
+    }
+
+    // Show Modal
+    const modal = document.getElementById('portfolioModal');
+    const backdrop = document.getElementById('portfolioBackdrop');
+    const panel = document.getElementById('portfolioPanel');
+
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+        backdrop.classList.remove('opacity-0');
+        panel.classList.remove('opacity-0', 'scale-95');
+    }, 10);
+};
+
+window.closePortfolioModal = () => {
+    const modal = document.getElementById('portfolioModal');
+    const backdrop = document.getElementById('portfolioBackdrop');
+    const panel = document.getElementById('portfolioPanel');
+
+    backdrop.classList.add('opacity-0');
+    panel.classList.add('opacity-0', 'scale-95');
+
+    setTimeout(() => {
+        modal.classList.add('hidden');
+    }, 300);
+};

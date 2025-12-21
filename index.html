@@ -230,7 +230,8 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="services-grid">
 
                     <!-- 1. Event Organizer -->
-                    <div class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer bg-black">
+                    <div onclick="openPricingModal('eo')"
+                        class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer bg-black">
                         <div class="aspect-w-16 aspect-h-10 h-80">
                             <img data-img-src="services.eo"
                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
@@ -245,7 +246,8 @@
                     </div>
 
                     <!-- 2. Travel Management -->
-                    <div class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer bg-black">
+                    <div onclick="openPricingModal('travel')"
+                        class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer bg-black">
                         <div class="aspect-w-16 aspect-h-10 h-80">
                             <img data-img-src="services.travel"
                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
@@ -260,7 +262,8 @@
                     </div>
 
                     <!-- 3. Konsultasi SDA -->
-                    <div class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer bg-black">
+                    <div onclick="openPricingModal('sda')"
+                        class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer bg-black">
                         <div class="aspect-w-16 aspect-h-10 h-80">
                             <img data-img-src="services.sda"
                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
@@ -275,7 +278,8 @@
                     </div>
 
                     <!-- 4. Sertifikasi -->
-                    <div class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer bg-black">
+                    <div onclick="openPricingModal('sertifikasi')"
+                        class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer bg-black">
                         <div class="aspect-w-16 aspect-h-10 h-80">
                             <img data-img-src="services.sertifikasi"
                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
@@ -290,7 +294,8 @@
                     </div>
 
                     <!-- 5. Public Training -->
-                    <div class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer">
+                    <div onclick="openPricingModal('training')"
+                        class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer">
                         <div class="aspect-w-16 aspect-h-10 h-64">
                             <img data-img-src="services.training"
                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
@@ -308,7 +313,8 @@
                     </div>
 
                     <!-- 6. In House Training -->
-                    <div class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer">
+                    <div onclick="openPricingModal('inhouse')"
+                        class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer">
                         <div class="aspect-w-16 aspect-h-10 h-64">
                             <img data-img-src="services.inhouse"
                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
@@ -326,7 +332,8 @@
                     </div>
 
                     <!-- 7. Laboratorium & Lingkungan -->
-                    <div class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer">
+                    <div onclick="openPricingModal('lab')"
+                        class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer">
                         <div class="aspect-w-16 aspect-h-10 h-64">
                             <img data-img-src="services.lab"
                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
@@ -344,7 +351,8 @@
                     </div>
 
                     <!-- 8. Konsultasi Teknis -->
-                    <div class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer">
+                    <div onclick="openPricingModal('consulting')"
+                        class="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer">
                         <div class="aspect-w-16 aspect-h-10 h-64">
                             <img data-img-src="services.consulting"
                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
@@ -499,60 +507,102 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     <!-- Items -->
-                    <div
-                        class="bg-white p-2 rounded shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div onclick="openPortfolioModal('training')"
+                        class="bg-white p-2 rounded shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group">
                         <div class="overflow-hidden bg-gray-200 h-48 relative">
-                            <img data-img-src="portfolio.0" alt="Project" class="w-full h-full object-cover">
+                            <img data-img-src="portfolio.0" alt="Project"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="text-white font-bold tracking-widest border border-white px-4 py-2 hover:bg-white hover:text-primary transition-colors">LIHAT
+                                    DETAIL</span>
+                            </div>
                         </div>
                         <div class="mt-3">
                             <h4 class="font-bold text-primary text-lg">Dokumentasi Training</h4>
                             <p class="text-xs text-gray-500 uppercase tracking-wide">Public Training</p>
                         </div>
                     </div>
-                    <div
-                        class="bg-white p-2 rounded shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div onclick="openPortfolioModal('workshop')"
+                        class="bg-white p-2 rounded shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group">
                         <div class="overflow-hidden bg-gray-200 h-48 relative">
-                            <img data-img-src="portfolio.1" alt="Project" class="w-full h-full object-cover">
+                            <img data-img-src="portfolio.1" alt="Project"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="text-white font-bold tracking-widest border border-white px-4 py-2 hover:bg-white hover:text-primary transition-colors">LIHAT
+                                    DETAIL</span>
+                            </div>
                         </div>
                         <div class="mt-3">
                             <h4 class="font-bold text-primary text-lg">Workshop Teknis</h4>
                             <p class="text-xs text-gray-500 uppercase tracking-wide">In House Training</p>
                         </div>
                     </div>
-                    <div
-                        class="bg-white p-2 rounded shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div onclick="openPortfolioModal('akreditasi')"
+                        class="bg-white p-2 rounded shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group">
                         <div class="overflow-hidden bg-gray-200 h-48 relative">
-                            <img data-img-src="portfolio.2" alt="Project" class="w-full h-full object-cover">
+                            <img data-img-src="portfolio.2" alt="Project"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="text-white font-bold tracking-widest border border-white px-4 py-2 hover:bg-white hover:text-primary transition-colors">LIHAT
+                                    DETAIL</span>
+                            </div>
                         </div>
                         <div class="mt-3">
                             <h4 class="font-bold text-primary text-lg">Pendampingan Akreditasi</h4>
                             <p class="text-xs text-gray-500 uppercase tracking-wide">Konsultasi</p>
                         </div>
                     </div>
-                    <div
-                        class="bg-white p-2 rounded shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div onclick="openPortfolioModal('survei')"
+                        class="bg-white p-2 rounded shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group">
                         <div class="overflow-hidden bg-gray-200 h-48 relative">
-                            <img data-img-src="portfolio.3" alt="Project" class="w-full h-full object-cover">
+                            <img data-img-src="portfolio.3" alt="Project"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="text-white font-bold tracking-widest border border-white px-4 py-2 hover:bg-white hover:text-primary transition-colors">LIHAT
+                                    DETAIL</span>
+                            </div>
                         </div>
                         <div class="mt-3">
                             <h4 class="font-bold text-primary text-lg">Survei Lapangan</h4>
                             <p class="text-xs text-gray-500 uppercase tracking-wide">Konsultasi SDA</p>
                         </div>
                     </div>
-                    <div
-                        class="bg-white p-2 rounded shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div onclick="openPortfolioModal('sampling')"
+                        class="bg-white p-2 rounded shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group">
                         <div class="overflow-hidden bg-gray-200 h-48 relative">
-                            <img data-img-src="portfolio.4" alt="Project" class="w-full h-full object-cover">
+                            <img data-img-src="portfolio.4" alt="Project"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="text-white font-bold tracking-widest border border-white px-4 py-2 hover:bg-white hover:text-primary transition-colors">LIHAT
+                                    DETAIL</span>
+                            </div>
                         </div>
                         <div class="mt-3">
                             <h4 class="font-bold text-primary text-lg">Sampling Lingkungan</h4>
                             <p class="text-xs text-gray-500 uppercase tracking-wide">Laboratorium</p>
                         </div>
                     </div>
-                    <div
-                        class="bg-white p-2 rounded shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div onclick="openPortfolioModal('kreatif')"
+                        class="bg-white p-2 rounded shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group">
                         <div class="overflow-hidden bg-gray-200 h-48 relative">
-                            <img data-img-src="portfolio.5" alt="Project" class="w-full h-full object-cover">
+                            <img data-img-src="portfolio.5" alt="Project"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="text-white font-bold tracking-widest border border-white px-4 py-2 hover:bg-white hover:text-primary transition-colors">LIHAT
+                                    DETAIL</span>
+                            </div>
                         </div>
                         <div class="mt-3">
                             <h4 class="font-bold text-primary text-lg">Pelatihan Kreatif</h4>
@@ -905,7 +955,7 @@
             <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
 
                 <!-- Panel Modal -->
-                <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg scale-95 opacity-0"
+                <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all duration-500 ease-out sm:my-8 sm:w-full sm:max-w-lg scale-50 opacity-0 translate-y-12"
                     id="modalPanel">
 
                     <!-- Header Modal -->
@@ -961,6 +1011,70 @@
     </div>
     <!-- Scripts -->
     <script type="module" src="js/script.js"></script>
+    <!-- Portfolio Modal -->
+    <div id="portfolioModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <!-- Backdrop -->
+        <div id="portfolioBackdrop"
+            class="fixed inset-0 bg-black/80 transition-opacity duration-300 opacity-0 backdrop-blur-sm"
+            onclick="closePortfolioModal()"></div>
+
+        <!-- Modal Panel -->
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+                <div id="portfolioPanel"
+                    class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-4xl opacity-0 scale-95 duration-300">
+
+                    <!-- Close Button -->
+                    <button onclick="closePortfolioModal()"
+                        class="absolute top-4 right-4 text-gray-400 hover:text-gray-500 z-20 bg-white rounded-full p-1 shadow-md">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+
+                    <!-- Content -->
+                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                        <div class="sm:flex sm:items-start flex-col w-full">
+                            <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left w-full">
+                                <h3 class="text-2xl font-serif font-bold leading-6 text-primary mb-2"
+                                    id="portfolioTitle">
+                                    Judul Portfolio
+                                </h3>
+                                <div
+                                    class="flex items-center gap-2 text-sm text-accent font-medium mb-6 justify-center sm:justify-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    <span id="portfolioDate">Tanggal</span>
+                                </div>
+
+                                <div class="mt-2">
+                                    <p class="text-sm text-gray-600 leading-relaxed mb-8" id="portfolioDesc">
+                                        Deskripsi...
+                                    </p>
+
+                                    <!-- Image Grid -->
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="portfolioImages">
+                                        <!-- Images injected by JS -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                        <button type="button"
+                            class="mt-3 inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-primary/90 sm:mt-0 sm:w-auto"
+                            onclick="closePortfolioModal()">Tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>

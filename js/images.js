@@ -61,6 +61,38 @@ const siteImages = {
     bg: 'images/image/gambar1.png',
     partnerLogoBase: 'https://picsum.photos/100/100?random=',
   },
+  portfolioDetails: {
+    training: [
+      'images/image/dokumentasi-training(1).png',
+      'images/image/dokumentasi-training(2).png',
+      'images/image/dokumentasi-training(3).png',
+    ],
+    workshop: [
+      'images/image/workshop-teknis(1).png',
+      'images/image/workshop-teknis(2).png',
+      'images/image/workshop-teknis(3).png',
+    ],
+    akreditasi: [
+      'images/image/pedampingan-akreditasi(1).png',
+      'images/image/pedampingan-akreditasi(2).png',
+      'images/image/pedampingan-akreditasi(3).png',
+    ],
+    survei: [
+      'images/image/survei-lapangan(1).png',
+      'images/image/survei-lapangan(2).png',
+      'images/image/survei-lapangan(3).png',
+    ],
+    sampling: [
+      'images/image/sampling-lingkungan(1).png',
+      'images/image/sampling-lingkungan(2).png',
+      'images/image/sampling-lingkungan(3).png',
+    ],
+    kreatif: [
+      'images/image/pelatihan-kreatif(1).png',
+      'images/image/pelatihan-kreatif(2).png',
+      'images/image/pelatihan-kreatif(3).png',
+    ]
+  },
   footer: {
     phoneScreen: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
   }
