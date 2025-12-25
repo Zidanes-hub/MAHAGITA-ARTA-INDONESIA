@@ -30,16 +30,37 @@ const Message = mongoose.model('Message', MessageSchema);
 
 // --- 3. BIKIN API ENDPOINT (Jalur Masuk) ---
 
-// Route buat nge-tes doang
+const path = require('path');
+
+// --- Middleware Static Files (Frontend) ---
+// Kita serve folder tertentu saja biar aman (server.js & .env gak ikut ke-serve)
+app.use('/css', express.static(path.join(__dirname, 'css')));
+app.use('/js', express.static(path.join(__dirname, 'js')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
+app.use('/documents', express.static(path.join(__dirname, 'documents')));
+
+// --- 3. BIKIN API ENDPOINT (Jalur Masuk) ---
+
+// Route Utama (Landing Page)
 app.get('/', (req, res) => {
-    res.send('Server Mahagita Artha Indonesia is Online! 🚀');
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+// Route Login Page
+app.get('/login.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'login.html'));
+});
+
+// Route Admin Page
+app.get('/admin.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'admin.html'));
 });
 
 // Route buat nerima pesan dari form (POST)
 app.post('/api/contact', async (req, res) => {
     try {
         const { name, email, message } = req.body;
-        
+
         // Simpan ke database
         const newMessage = new Message({ name, email, message });
         await newMessage.save();
