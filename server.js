@@ -32,12 +32,10 @@ const Message = mongoose.model('Message', MessageSchema);
 
 const path = require('path');
 
-// --- Middleware Static Files (Frontend) ---
-// Kita serve folder tertentu saja biar aman (server.js & .env gak ikut ke-serve)
-app.use('/css', express.static(path.join(__dirname, 'css')));
-app.use('/js', express.static(path.join(__dirname, 'js')));
-app.use('/images', express.static(path.join(__dirname, 'images')));
-app.use('/documents', express.static(path.join(__dirname, 'documents')));
+// --- Middleware Static Files ---
+app.use(express.static(path.join(__dirname, 'public'))); // Serve folder public (images, documents, etc.)
+app.use('/css', express.static(path.join(__dirname, 'css'))); // Tetap serve CSS dari root (bisa dipindah ke public kalau mau)
+app.use('/js', express.static(path.join(__dirname, 'js'))); // Tetap serve JS dari root
 
 // --- 3. BIKIN API ENDPOINT (Jalur Masuk) ---
 
