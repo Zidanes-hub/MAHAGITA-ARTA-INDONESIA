@@ -21,7 +21,7 @@ async function loadMessages() {
 
     try {
         // Tembak API GET yang baru kita buat
-        const response = await fetch('http://localhost:3000/api/messages');
+        const response = await fetch('/api/messages');
         const data = await response.json();
 
         // Bersihkan tabel
@@ -38,9 +38,9 @@ async function loadMessages() {
             row.classList.add('border-b', 'border-gray-200', 'hover:bg-gray-100');
 
             // Format Tanggal biar cantik
-            const date = new Date(msg.date).toLocaleString('id-ID', { 
-                day: 'numeric', month: 'short', year: 'numeric', 
-                hour: '2-digit', minute: '2-digit' 
+            const date = new Date(msg.date).toLocaleString('id-ID', {
+                day: 'numeric', month: 'short', year: 'numeric',
+                hour: '2-digit', minute: '2-digit'
             });
 
             row.innerHTML = `

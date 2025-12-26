@@ -97,7 +97,12 @@ app.post('/api/login', (req, res) => {
 });
 
 // Jalankan Server
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Server jalan di http://localhost:${PORT}`);
-});
+// Jalankan Server
+const PORT = process.env.PORT || 3000;
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Server jalan di http://localhost:${PORT}`);
+    });
+}
+
+module.exports = app;
