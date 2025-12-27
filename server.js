@@ -80,6 +80,17 @@ app.get('/api/messages', async (req, res) => {
     }
 });
 
+// --- Route buat HAPUS pesan (DELETE) - Khusus Admin ---
+app.delete('/api/messages/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        await Message.findByIdAndDelete(id);
+        res.json({ success: true, message: 'Pesan berhasil dihapus!' });
+    } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 // --- Route LOGIN (POST) ---
 app.post('/api/login', (req, res) => {
     const { username, password } = req.body;

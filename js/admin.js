@@ -48,12 +48,38 @@ async function loadMessages() {
                 <td class="py-3 px-6 text-left font-bold text-[#0f2820]">${msg.name}</td>
                 <td class="py-3 px-6 text-left text-blue-600">${msg.email}</td>
                 <td class="py-3 px-6 text-left italic">"${msg.message}"</td>
+                <td class="py-3 px-6 text-center">
+                    <button onclick="deleteMessage('${msg._id}')" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-700 transition text-xs">
+                        Delete
+                    </button>
+                </td>
             `;
             tableBody.appendChild(row);
         });
 
     } catch (error) {
         console.error('Error:', error);
-        tableBody.innerHTML = `<tr><td colspan="4" class="text-center py-4 text-red-500 font-bold">Gagal mengambil data: ${error.message} <br> Pastikan Server (Port 3000) Nyala!</td></tr>`;
+        tableBody.innerHTML = `<tr><td colspan="5" class="text-center py-4 text-red-500 font-bold">Gagal mengambil data: ${error.message} <br> Pastikan Server (Port 3000) Nyala!</td></tr>`;
     }
+}
+
+// Fungsi Delete Pesan
+async function deleteMessage(id) {
+    if (!confirm('Apakah Anda yakin ingin menghapus pesan ini secara permanen?')) return;
+
+    try {
+        const response = await fetch(`/api/messages/${id}`, { method: 'DELETE' });
+        const result = await response.json();
+
+        if (result.success) {
+            alert('Pesan berhasil dihapus!');
+            loadMessages(); // Refresh tabel
+        } else {
+            alert('Gagal menghapus pesan: ' + result.error);
+        }
+    } catch (error) {
+        console.error('Error delet:', error);
+        alert('Terjadi kesalahan saat menghapus pesan.');
+    }
+}
 }
