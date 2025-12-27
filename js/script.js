@@ -209,11 +209,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert('Terima kasih! Pesan Anda sudah tersimpan di Database.');
                     contactForm.reset(); // Kosongin form
                 } else {
-                    alert('Gagal mengirim pesan.');
+                    alert('Gagal mengirim pesan: ' + (result.error || 'Unknown error'));
                 }
             } catch (error) {
                 console.error('Error:', error);
-                alert('Server error! Pastikan backend nyala.');
+                alert('Server error! Pastikan backend nyala. Detail: ' + error.message);
             } finally {
                 submitBtn.innerText = originalText;
             }
