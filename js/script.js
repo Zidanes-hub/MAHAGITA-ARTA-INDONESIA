@@ -46,10 +46,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const imgElements = document.querySelectorAll('[data-img-src]');
+    console.log(`Found ${imgElements.length} images to inject`);
+    console.log('Site Images:', siteImages);
+
     imgElements.forEach(el => {
         const key = el.getAttribute('data-img-src');
-        const suffix = el.getAttribute('data-suffix') || ''; // For randomizing partners
+        const suffix = el.getAttribute('data-suffix') || '';
         let src = getNestedValue(siteImages, key);
+
+        console.log(`Processing ${key}:`, src);
 
         if (src) {
             if (suffix) src += suffix;
